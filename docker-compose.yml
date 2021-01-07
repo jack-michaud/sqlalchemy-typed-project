@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  api:
+    build: ./
+    ports:
+    - 5000:5000
+
+  db: 
+    image: postgres
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_DB=api
